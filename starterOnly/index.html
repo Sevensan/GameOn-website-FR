@@ -17,7 +17,7 @@
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      
+
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
@@ -62,8 +62,7 @@
               method="get"
               onsubmit="return validate();"
             >
-              <div
-                class="formData">
+              <div class="formData">
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
@@ -72,9 +71,9 @@
                   name="first"
                   minlength="2"
                 /><br>
+                <p class="notif" id="first-notif">Veuillez entrer 2 caractères ou plus</p>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>Nom</label><br>
                 <input
                   class="text-control"
@@ -82,9 +81,9 @@
                   id="last"
                   name="last"
                 /><br>
+                <p class="notif" id="last-notif">Veuillez entrer 2 caractères ou plus</p>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
@@ -92,9 +91,9 @@
                   id="email"
                   name="email"
                 /><br>
+                <p class="notif" id="email-notif">veuillez indiquer votre email</p>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -102,17 +101,17 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
+                <p class="notif" id="birth-notif">veuillez indiquer une date de naissance valide</p>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <p class="notif" id="quantity-notif">veuillez indiquer un chiffre</p>
               </div>
               <p class="text-label">Quelles villes ?</p>
-              <div
-                class="formData">
+              <div class="formData">
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input location"
                   type="radio"
                   id="location1"
                   name="location"
@@ -123,7 +122,7 @@
                   New York</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input location"
                   type="radio"
                   id="location2"
                   name="location"
@@ -134,7 +133,7 @@
                   San Francisco</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input location"
                   type="radio"
                   id="location3"
                   name="location"
@@ -145,7 +144,7 @@
                   Seattle</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input location"
                   type="radio"
                   id="location4"
                   name="location"
@@ -156,7 +155,7 @@
                   Chicago</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input location"
                   type="radio"
                   id="location5"
                   name="location"
@@ -167,7 +166,7 @@
                   Boston</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input location"
                   type="radio"
                   id="location6"
                   name="location"
@@ -178,6 +177,7 @@
                   Portland</label
                 >
               </div>
+              <p class="notif" id="location-notif">Vous devez choisir une option</p>
 
               <div
                 class="formData">
@@ -185,29 +185,34 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
+
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <p class="notif" id="checkbox-notif">vous devez accépter les conditions pour soumettre le formulaire</p>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
-              <input
+              <!-- <input
                 class="btn-submit"
                 type="submit"
                 class="button"
                 value="C'est parti"
-              />
+              /> -->
+              <input type="text" id="submitBtn" class="btn-submit button" value="C'est tipar">
             </form>
           </div>
         </div>
+      </div>
+      <div id="success">
+        <p>Envoi réussi ! Merci ! Votre réservation a été reçue</p>
       </div>
     </main>
     <footer>

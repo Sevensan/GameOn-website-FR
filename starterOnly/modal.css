@@ -99,7 +99,7 @@ img {
     display: block;
     margin-top: -15px;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -226,7 +226,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+/*
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
@@ -473,6 +473,26 @@ input[data-error]::after {
 .hero-section > .btn-signup {
   display: none;
 }
+
+/* NOTIFICATIONS */
+.notif {
+  display: none;
+  font-size: 12px;
+  color: red;
+}
+
+#success {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  background: rgb(158, 240, 176);
+  color: rgb(16, 117, 41);
+}
+
+/* footer */
 footer {
   padding-left: 2vw;
   padding-right: 2vw;
