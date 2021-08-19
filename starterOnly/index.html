@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="./Logo.png">
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
@@ -60,10 +61,10 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="submitForm"
             >
               <div class="formData">
-                <label>Prénom</label><br>
+                <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
@@ -74,7 +75,7 @@
                 <p class="notif" id="first-notif">Veuillez entrer 2 caractères ou plus</p>
               </div>
               <div class="formData">
-                <label>Nom</label><br>
+                <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
@@ -84,7 +85,7 @@
                 <p class="notif" id="last-notif">Veuillez entrer 2 caractères ou plus</p>
               </div>
               <div class="formData">
-                <label>E-mail</label><br>
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
@@ -94,7 +95,7 @@
                 <p class="notif" id="email-notif">veuillez indiquer votre email</p>
               </div>
               <div class="formData">
-                <label>Date de naissance</label><br>
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
@@ -104,15 +105,16 @@
                 <p class="notif" id="birth-notif">veuillez indiquer une date de naissance valide</p>
               </div>
               <div class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                 <p class="notif" id="quantity-notif">veuillez indiquer un chiffre</p>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div class="formData">
+                <!-- remplacement des radios par checkbox pour pouvoir sélectionner plusieurs locations -->
                 <input
                   class="checkbox-input location"
-                  type="radio"
+                  type="checkbox"
                   id="location1"
                   name="location"
                   value="New York"
@@ -123,7 +125,7 @@
                 >
                 <input
                   class="checkbox-input location"
-                  type="radio"
+                  type="checkbox"
                   id="location2"
                   name="location"
                   value="San Francisco"
@@ -134,7 +136,7 @@
                 >
                 <input
                   class="checkbox-input location"
-                  type="radio"
+                  type="checkbox"
                   id="location3"
                   name="location"
                   value="Seattle"
@@ -145,7 +147,7 @@
                 >
                 <input
                   class="checkbox-input location"
-                  type="radio"
+                  type="checkbox"
                   id="location4"
                   name="location"
                   value="Chicago"
@@ -156,7 +158,7 @@
                 >
                 <input
                   class="checkbox-input location"
-                  type="radio"
+                  type="checkbox"
                   id="location5"
                   name="location"
                   value="Boston"
@@ -167,7 +169,7 @@
                 >
                 <input
                   class="checkbox-input location"
-                  type="radio"
+                  type="checkbox"
                   id="location6"
                   name="location"
                   value="Portland"
@@ -206,7 +208,7 @@
                 class="button"
                 value="C'est parti"
               /> -->
-              <input type="text" id="submitBtn" class="btn-submit button" value="C'est tipar">
+              <input type="submit" id="submitBtn" class="btn-submit button" value="Je m'inscris">
             </form>
           </div>
         </div>
