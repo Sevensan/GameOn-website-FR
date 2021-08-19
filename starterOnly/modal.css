@@ -484,6 +484,7 @@ input[data-error]::after {
 
 #success {
   position: fixed;
+  display: none;
   opacity: 0;
   top: 0;
   left: 0;

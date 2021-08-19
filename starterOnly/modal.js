@@ -19,8 +19,10 @@ const formData = document.querySelectorAll(".formData")
 const closeBtn = document.querySelectorAll(".close")
 const firstName = document.querySelector('#first')
 const firstNotif = document.querySelector('#first-notif')
+const firstNotifNum = document.querySelector("#firstNotifNum")
 const lastName = document.querySelector('#last')
 const lastNotif = document.querySelector('#last-notif')
+const lastNotifNum = document.querySelector("#lastNotifNum")
 const email = document.querySelector('#email')
 const emailNotif = document.querySelector('#email-notif')
 const birthDate = document.querySelector('#birthdate')
@@ -46,6 +48,7 @@ checkbox1.value = "off"
 checkbox2.value = "off"
 // IF ALREADY SUBMITTED, DISPLAY MESSAGE
 if ( currentUrl.indexOf("first") > 1 ) {
+  success.style.display = 'block'
   success.classList.add('submitted')
 }
 
@@ -72,6 +75,11 @@ console.log("checkbox2 : " + checkbox2.value)
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal))
 // close modal event
 closeBtn.forEach((btn) => btn.addEventListener("click", closeModal))
+
+// red border function
+function redBorder (element) {
+  element.style.border = "1px solid red"
+}
 
 //check form
 submitBtn.forEach((btn) => btn.addEventListener("click", submitForm))
@@ -157,8 +165,14 @@ function submitForm (event) {
 
 
   // FIRSTNAME CHECK
-  if (firstName.value.length < 2) {
+  const regexNum = /\d/
+  if ( firstName.value.length < 2 ) {
     show(firstNotif)
+    redBorder(firstName)
+    // check if there is numbers in firstname
+  } else if ( regexNum.test(firstName.value )) {
+    show(firstNotifNum)
+    redBorder(firstName)
   } else {
     firstNameOK = true
     hide(firstNotif)
@@ -167,7 +181,13 @@ function submitForm (event) {
   // LASTNAME CHECK
   if (lastName.value.length < 2) {
     show(lastNotif)
-  } else {
+    redBorder(lastName)
+    // check if there is numbers in lastname
+  } else if ( regexNum.test(lastName.value )) {
+    show(lastNotifNum)
+    redBorder(lastName)
+  }
+   else {
     lastNameOK = true
     hide(lastNotif)
   }
@@ -177,11 +197,13 @@ function submitForm (event) {
     hide(emailNotif)
   } else {
     show(emailNotif)
+    redBorder(email)
   }
 
   // BIRTHDATE CHECK
   if (birthDate.value.length != 10) {
     show(birthNotif)
+    redBorder(birthDate)
   } else {
     birthDateOK = true
     hide(birthNotif)
@@ -192,6 +214,7 @@ function submitForm (event) {
   console.log(typeof quantity.value)
   if (quantity.value.length <= 0) {
     show(quantityNotif)
+    redBorder(quantity)
   } else {
     quantityOK = true
     hide(quantityNotif)

@@ -73,6 +73,7 @@
                   minlength="2"
                 /><br>
                 <p class="notif" id="first-notif">Veuillez entrer 2 caractères ou plus</p>
+                <p class="notif" id="firstNotifNum">Les chiffres ne sont pas acceptés</p>
               </div>
               <div class="formData">
                 <label for="last">Nom</label><br>
@@ -83,6 +84,7 @@
                   name="last"
                 /><br>
                 <p class="notif" id="last-notif">Veuillez entrer 2 caractères ou plus</p>
+                <p class="notif" id="lastNotifNum">Les chiffres ne sont pas acceptés</p>
               </div>
               <div class="formData">
                 <label for="email">E-mail</label><br>
@@ -106,6 +108,7 @@
               </div>
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <!-- quantity doit être un type number -->
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                 <p class="notif" id="quantity-notif">veuillez indiquer un chiffre</p>
               </div>
@@ -214,7 +217,9 @@
         </div>
       </div>
       <div id="success">
-        <p>Envoi réussi ! Merci ! Votre réservation a été reçue</p>
+        <div>
+          <p>Envoi réussi ! Merci ! Votre réservation a été reçue</p>
+        </div>
       </div>
     </main>
     <footer>
